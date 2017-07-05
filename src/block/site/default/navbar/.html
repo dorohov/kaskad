@@ -1,0 +1,109 @@
+<nav class="navbar {{class}}">
+	<div class="container {{navbar_prefix}}container">
+		<div class="row {{navbar_prefix}}row">
+			<div class="cols {{navbar_prefix}}cols  is--header"> 				
+				<div class="{{navbar_prefix}}header">
+					<div class="row {{navbar_prefix}}row-header ">
+						<div class="cols {{navbar_prefix}}cols-header  is--hamburger">
+							<div class="{{navbar_prefix}}hamburger">
+								<button class="{{navbar_prefix}}hamburger-btn hamburger__item" data-toggle="collapse" data-target="#bs-navbar-collapse" aria-expanded="false" data-toggle-nav=".navbar-site" data-body="html" data-collapse-nav=".navbar__collapse">
+									<span class="hamburger__line  is--left"></span>
+									<span class="hamburger__line  is--center"></span>
+									<span class="hamburger__line  is--center-2"></span>
+									<span class="hamburger__line  is--right"></span>
+								</button>
+							</div>
+						</div>
+						<div class="cols {{navbar_prefix}}cols-header  is--brand">
+							<!--<a class="{{navbar_prefix}}brand" href="/">[[azbntple tpl="/src/block/site/default/svg-sprite/.html" icon-name="logotip" ]]
+							</a>-->
+							<a class="{{navbar_prefix}}brand" href="/"><img src="{{url-path-img}}/temp/logotip.png" alt="">
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="cols {{navbar_prefix}}cols  is--collapse">
+				<div class="{{navbar_prefix}}collapse" >
+					<div class="{{navbar_prefix}}collapse-inner">
+						<div class="row {{navbar_prefix}}collapse-row">
+							<div class="cols {{navbar_prefix}}collapse-cols  is--nav">
+								<ul class="{{navbar_prefix}}nav">
+									[[azbntple 
+										tpl="/src/block/site/default/navbar/item.html" 
+										navbar_prefix="navbar__" 
+										navbar_name="Информация о&nbsp;компании"
+										navbar_link="/about.html"
+										navbar_mode="  " 
+									]]	
+									[[azbntple 
+										tpl="/src/block/site/default/navbar/item.html" 
+										navbar_prefix="navbar__" 
+										navbar_name="Электро двигатели"
+										navbar_link="/engines.html"
+										navbar_mode="  " 
+									]]	
+									[[azbntple 
+										tpl="/src/block/site/default/navbar/item.html" 
+										navbar_prefix="navbar__" 
+										navbar_name="Насосы и&nbsp;запчасти"
+										navbar_link="/pumps.html"
+										navbar_mode="  " 
+									]]	
+									[[azbntple 
+										tpl="/src/block/site/default/navbar/item.html" 
+										navbar_prefix="navbar__" 
+										navbar_name="Запорная арматура"
+										navbar_link="/stop-valves.html"
+										navbar_mode="  " 
+									]]	
+									[[azbntple 
+										tpl="/src/block/site/default/navbar/item.html" 
+										navbar_prefix="navbar__" 
+										navbar_name="Оплата и&nbsp;доставка"
+										navbar_link="/delivery.html"
+										navbar_mode="  " 
+									]]	
+									[[azbntple 
+										tpl="/src/block/site/default/navbar/item.html" 
+										navbar_prefix="navbar__" 
+										navbar_name="Гарантия и&nbsp;сервис"
+										navbar_link="/services.html"
+										navbar_mode="  " 
+									]]	
+									[[azbntple 
+										tpl="/src/block/site/default/navbar/item.html" 
+										navbar_prefix="navbar__" 
+										navbar_name="Контактная информация"
+										navbar_link="/contacts.html" 
+										navbar_mode="  "
+									]]	   
+								</ul>
+							</div>
+							<div class="cols {{navbar_prefix}}collapse-cols  is--search" >
+								<div class="dropdown {{navbar_prefix}}search-dropdown">
+									<a href="#" class="{{navbar_prefix}}search-btn dropdown-toggle" data-toggle="dropdown">
+										[[azbntple tpl="/src/block/site/default/svg-sprite/.html" icon-name="search" ]]
+									</a>
+									<ul class="dropdown-menu {{navbar_prefix}}search-dropdown-menu">
+										[[azbntple
+											tpl="/src/block/site/default/search/.html"
+											search_block="search__"
+											search_placeholder="Поиск"
+										]]
+									</ul>
+								</div>
+							</div>
+							<div class="cols {{navbar_prefix}}collapse-cols  is--contacts" >
+								<div class="{{navbar_prefix}}tel-block"><button type="button" class="btn__link  is--navbar" data-toggle="modal" data-target="#modals-call">Заказать звонок</button></div>
+								<div class="{{navbar_prefix}}tel-block">
+									<a href="tel:+79103008727" class="{{navbar_prefix}}tel">8 (800) <span>756-78-99</span></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</nav>

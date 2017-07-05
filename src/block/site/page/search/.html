@@ -1,0 +1,27 @@
+<div class="content-block {{page_prefix}}block" role="main">	
+	<div class="container content-block__container">
+		[[azbntple 
+			tpl="/src/block/site/default/breadcrumb/level1.html" 
+			bread_prefix="breadcrumb__"
+			bread_mod="  "
+			level_1="Вы искали"
+		]]	
+		[[azbntple 
+			tpl="/src/block/site/default/page-header/group.html" 
+			header_prefix="page-header__" 
+			header_mod="is--heading  is--search"
+			header_level="h1" 
+			header="Вы искали"
+			header_small_level="div"
+			header_small="«Насосы двухстороннего входа»"
+		]]	
+		[[azbntple 
+			tpl="/src/block/site/default/catalog/block.html" 
+			catalog_prefix="catalog-panel__"
+		]]
+		[[azbntple 
+			tpl="/src/block/site/default/pagination/panel.html" 
+			pagin_prefix="pagination-panel__"
+		]]
+	</div>
+</div>

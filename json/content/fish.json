@@ -1,0 +1,29 @@
+{
+	"contacts":{
+		"name":"ООО «Каскад»",
+		"domain":"kaskad-hidro.ru",
+		"domain_link":"http://kaskad-hidro.ru/",
+		"agreement_page":"agreement",
+		"copyright":"Все права защищены",
+		"email":"kaskad.gidro@gmail.com",
+		"email_name":"<span>kaskad.gidro</span>@gmail.com",
+		"phone":"8 (800) <span>756-78-99</span>", 
+		"phone_tel":"+78007567899",
+		"inn":"5753034600",
+		"ogrn":"1045753002085",
+		"address":"г.&nbsp;Орёл, Наугорское шоссе, д.5 литер&nbsp;Р"
+	},
+	"soc":{
+		"vk":"https://vk.com/"
+	},
+	"url-path-css":"/wp-content/themes/azbnbasetheme/css",
+	"url-path-css":"/css",
+	"url-path-img":"/wp-content/themes/azbnbasetheme/img",
+	"url-path-img":"/img",
+	"url-path-js":"/wp-content/themes/azbnbasetheme/js",
+	"url-path-js":"/js",
+	"url-path-plugins":"/wp-content/themes/azbnbasetheme/plugins",
+	"url-path-plugins":"/plugins",
+	"url-path-favicon":"/wp-content/themes/azbnbasetheme/favicon",
+	"url-path-favicon":"/favicon"
+}

@@ -1,0 +1,174 @@
+.index-page-header{
+	position: relative;
+	overflow: hidden;	
+	background-color: @white10;
+	/*@media @media-device {margin-bottom: 35px;}
+	@media @media-screen {margin-bottom: 3vw;}*/
+}
+.index-header__{
+	&container{
+		position: relative;
+		z-index: 1;
+		/*@media @media-size-xs{
+			min-height: ~"calc(100vh - @{navbar-top-xs})";
+		}*/
+		@media @media-size-xs {
+			z-index: 3;
+			position: relative;
+			padding-top: 40px;
+			padding-bottom: 40px;
+		}
+		@media @media-size-sm {
+			padding-top: 70px;
+			padding-bottom: 70px;
+		}
+		@media @media-size-sm{
+			//min-height: ~"calc(100vh - @{navbar-top-sm})";			
+		}
+		@media @media-screen{		
+			min-height: ~"calc(100vh - @{navbar-top-screen})";
+			padding-bottom: 290px;
+		}
+		@media @media-size-xxl{	
+			min-height: ~"calc(100vh - @{navbar-top-screen-xxl})";
+		}
+	}
+	&preview{
+		z-index: 2;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: contain;
+		position: absolute;
+
+		@media @media-size-xs {
+			bottom: 0;
+			right: 0;	
+			opacity: .2;		
+		}
+		@media @media-size-xs-p {
+			width: 245px;
+			height: 220px;
+			transform: translateX(40%);
+		}
+		@media @media-size-xs-l {
+			width: 205px;
+			height: 180px;
+		}
+		@media @media-notsmart {
+			top: 50%;
+			right: 0;
+			transform: translateY(-50%);			
+		}
+		@media @media-size-sm {
+			max-width: 185px;
+			max-height: 160px;
+			width: 24.8vw;
+			height: 21vw;			
+		}
+		@media @media-screen {
+			max-width: 885px;
+			max-height: 760px;
+			width: 47.8vw;
+			height: 41vw;			
+		}
+		@media @media-size-md {
+			width: 42.8vw;
+			height: 36vw;
+		}
+	}
+	&inner{
+		@media @media-screen {
+			position: absolute;
+			top: 50%;
+			transform: translate(-50%,-50%);
+			width: 100%;
+			left: 50%;
+			transition: @trs-site;
+		}	
+	}
+	&heading{
+		text-transform: uppercase;
+		font-family: @b-ff-2;
+		color: @blue;
+		@media @media-size-xs {
+			margin-bottom: 35px;
+			//text-align: center;	
+			br{display: none;}		
+		}
+		@media @media-size-sm {
+			margin-bottom: 35px;
+			padding: 40px;
+			border: 15px solid @white;
+		}
+		@media @media-screen {
+			margin-bottom: 2vw;
+			padding: 4.3vw 4.5vw;
+			border: 15px solid @white;
+		}
+	}
+	&heading-big{
+		@media @media-size-xs {			
+			.calcFontSize(22, 28, 320, 768);
+			.calcLineHeight(28, 34, 320, 768);	
+		}
+		@media @media-notsmart {
+			.calcFontSize(24, 80, 320, 1680);
+			.calcLineHeight(30, 86, 320, 1680);	
+		}	
+		@media @media-size-sm {
+			margin-bottom: 20px;
+			display: block;
+		}
+		@media @media-screen {
+			margin-bottom: 2vw;
+			display: block;
+		}
+	}
+	&heading-small{
+		@media @media-size-xs {			
+			.calcFontSize(22, 28, 320, 768);
+			.calcLineHeight(28, 34, 320, 768);	
+		}
+		@media @media-notsmart {
+			display: block;
+			.calcFontSize(24, 54, 320, 1680);
+			.calcLineHeight(30, 60, 320, 1680);
+		}
+	}
+	&note{
+		.calcFontSize(24, 34, 320, 1680);
+		.calcLineHeight(26, 36, 320, 1680);
+		letter-spacing: 0.5px;
+	}
+	&note-row{
+		@media @media-size-xs {
+			//justify-content: center; 
+		}
+		@media @media-screen {
+			margin-left: -20px;
+			margin-right: -20px;
+		}
+		@media @media-size-xxl {
+			margin-left: -35px;
+			margin-right: -35px;
+		}
+	}
+	&note-cols{
+		@media @media-size-xs-p {			
+			&:nth-child(2n + 1){
+				.makeCols(5, 12);
+			}			
+			&:nth-child(2n + 2){
+				.makeCols(7, 12);
+			}
+		}
+		@media @media-screen {
+			padding-left: 20px;
+			padding-right: 20px;
+		}
+		@media @media-size-xxl {
+			padding-left: 35px;
+			padding-right: 35px;
+		}
+	}
+}
