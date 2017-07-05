@@ -1,10 +1,13 @@
 <div class="{{contacts_prefix}}block">	
 	<div class="{{contacts_prefix}}row row  is--wrap  is--gutter">
 		<div class="{{contacts_prefix}}cols cols">	
-			<div class="{{contacts_prefix}}item">
-				<span class="{{contacts_prefix}}item-head">Офис:</span>
-				{{contacts.address}}
-			</div>
+			[[azbntple 
+				tpl="/src/block/site/default/social/item-nolink.html" 
+				social_prefix="social__"
+				social_mode="is--contacts"
+				social_icon="location"
+				social_name="г. Орёл, Наугорское шоссе, д.5 литер Р"
+			]]
 		</div>
 		<div class="{{contacts_prefix}}cols cols">					
 			[[azbntple 
