@@ -1374,7 +1374,10 @@ textarea.form__control{height: 150px;}
 			opacity: 0;
 		    visibility: hidden;
 		    transition: @trs-site;
-		    background: @navbar-bg-device;
+		    background: @navbar-bg-device;		    
+		    .navbar-site.opacity &{
+		    	background: @white5;
+		    }
 		    &.is--open{
 		    	visibility: visible;
 		    	opacity: 1;
