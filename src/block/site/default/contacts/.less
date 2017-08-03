@@ -20,13 +20,17 @@
 				}
 			}
 		}
+		&.is--line-2{
+			padding-top: 30px;
+			align-items: flex-start;
+		}
 		/*@media @media-screen {
 			justify-content: space-between;
 		}*/
 	}
 	&cols{
 		@media @media-size-xs {
-			&:first-child{order: 1;}
+			//&:first-child{order: 1;}
 		}
 		&.is--btn{
 			min-width: 265px;
@@ -36,6 +40,12 @@
 		&.is--icon{
 			position: relative;
 			padding-left: 90px;
+		}
+		&.is--text{
+			margin-bottom: 10px;
+			@media @media-screen {
+				margin-bottom: 15px;
+			}
 		}
 		@media @media-size-xs {
 			font-size: @b-fs - 2;
