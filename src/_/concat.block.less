@@ -14,7 +14,7 @@
 	&row{
 		@media @media-device {justify-content: center;}
 		@media @media-size-xs-l {justify-content: flex-start;}
-		@media @media-screen {justify-content: space-between;}
+		@media @media-screen {justify-content: center;}
 	}
 	&cols{
 		@media @media-size-xs-p {
@@ -25,7 +25,10 @@
 	&item{
 		img{
 			@media @media-size-xs{
-				max-height: 20px;			
+				max-height: 70px;			
+			}
+			@media @media-size-sm{
+				max-height: 80px;			
 			}
 		}
 	}
