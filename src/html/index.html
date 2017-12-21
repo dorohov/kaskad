@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="ru-RU"> 
+	<head>
+		[[azbntple 
+			tpl="/src/block/site/default/head/.html" 
+			title=" "
+			description=" "
+		]] 		
+	</head>
+	<body> 
+		[[azbntple 
+			tpl="/src/block/site/default/navbar/.html"
+			class="navbar-site scroll"
+			navbar_prefix="navbar__"   
+		]] 
+		[[azbntple 
+			tpl="/src/block/site/page/index/header/.html"
+			class="index-page-header"
+			prefix_block="index-header__"    
+		]]		
+		[[azbntple 
+			tpl="/src/block/site/page/index/.html"
+			class="index-page"
+			prefix_block="_ip__"    
+		]]	
+		[[azbntple 
+			tpl="/src/block/site/default/footer/.html"
+			footer_prefix="footer__" 
+		]]
+
+		[[azbntple 
+			tpl="/src/block/site/default/modals/call.html"
+			modals_prefix="modal-base__" 
+			modals_id="modals-call"
+		]]
+		[[azbntple tpl="/src/block/site/default/script/script.html" ]] 
+		[[azbntple tpl="/src/block/site/default/script/owl.html" ]] 
+		[[azbntple tpl="/src/block/site/default/script/googleMap.html" ]] 
+		[[azbntple tpl="/src/block/site/default/script/validationEngine.html" ]] 
+	</body>
+</html>
