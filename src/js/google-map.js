@@ -1,4 +1,4 @@
-function initMap() {     
+/*function initMap() {     
 	var coordMapOfficeOne = {lat: 52.980467, lng: 36.049066},
 		zoomMapOfficeOne = 17, 
 		styleMapOfficeOne = [{"featureType":"landscape.natural","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"color":"#e0efef"}]},{"featureType":"landscape.natural.landcover","elementType":"geometry","stylers":[{"lightness":"0"},{"saturation":"4"}]},{"featureType":"poi","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"color":"#c7dae2"}]},{"featureType":"poi","elementType":"labels","stylers":[{"visibility":"on"}]},{"featureType":"poi.business","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"geometry","stylers":[{"lightness":100},{"visibility":"simplified"}]},{"featureType":"transit.line","elementType":"geometry","stylers":[{"visibility":"on"},{"lightness":700}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#7bc3e4"}]}],
@@ -27,15 +27,73 @@ function initMap() {
 			map: mapOfficeOne,
 			icon: iconOfficeOne
 		});
-
-        /*$(window).on('resize', function() {
-			google.maps.event.trigger(map, "resize");
-			map.setCenter(coord);
-        });*/
 };
 $(function () {
 	$(document.body).on('shown.bs.modal', '.modal', {}, function(event){
 		event.preventDefault();
 		$(window).trigger('resize');      
 	});  
+});
+*/
+function initMap() {  
+  var map_container_div_id = 'map-google';
+  var cont = $('#' + map_container_div_id);  
+  var CMS__TPL_PATH = '/wp-content/themes/azbn7theme';  
+  if(cont.length) {    
+    var map_data = JSON.parse(cont.attr('data-map') || '{}');
+    var coordMapOfficeOne = map_data.center;
+    var zoomMapOfficeOne = map_data.zoom; 
+    var styleMapOfficeOne = [{"featureType":"landscape.natural","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"color":"#e0efef"}]},{"featureType":"landscape.natural.landcover","elementType":"geometry","stylers":[{"lightness":"0"},{"saturation":"4"}]},{"featureType":"poi","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"color":"#c7dae2"}]},{"featureType":"poi","elementType":"labels","stylers":[{"visibility":"on"}]},{"featureType":"poi.business","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"geometry","stylers":[{"lightness":100},{"visibility":"simplified"}]},{"featureType":"transit.line","elementType":"geometry","stylers":[{"visibility":"on"},{"lightness":700}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#7bc3e4"}]}],
+        optionsMapOfficeOne = {
+          zoom: zoomMapOfficeOne, 
+          center: new google.maps.LatLng(coordMapOfficeOne[0], coordMapOfficeOne[1]), 
+          //styles: styleMapOfficeOne
+        }, 
+      idOfficeOne = document.getElementById(map_container_div_id),
+      mapOfficeOne = new google.maps.Map(idOfficeOne, optionsMapOfficeOne);
+      var iconOfficeOne = {        
+	        path: "M31.9913 0C17.6639 0 6 11.6301 6 25.9159C6 31.8177 7.93237 37.3724 11.6056 41.9723C16.3582 47.9436 30.1634 62.1079 30.7379 62.7155L31.9913 64L33.2447 62.7155C33.8366 62.1079 47.6418 47.9436 52.3944 41.9723C56.0502 37.3724 58 31.8177 58 25.9159C57.9826 11.6301 46.3361 0 31.9913 0ZM49.6612 39.8199C45.8313 44.6282 35.5775 55.3209 31.9913 59.0182C28.4225 55.3209 18.1687 44.6282 14.3388 39.8199C11.1704 35.8275 9.48175 31.0193 9.48175 25.9159C9.48175 13.5395 19.5788 3.47166 31.9913 3.47166C44.4037 3.47166 54.5008 13.5395 54.5008 25.9159C54.5008 31.0193 52.8296 35.8275 49.6612 39.8199ZM31.9913 10.2935C23.5132 10.2935 16.6019 17.1673 16.6019 25.6382C16.6019 34.109 23.4958 40.9829 31.9913 40.9829C40.4868 40.9829 47.3806 34.109 47.3806 25.6382C47.3806 17.1673 40.4868 10.2935 31.9913 10.2935ZM31.9913 37.4939C25.4282 37.4939 20.1011 32.1823 20.1011 25.6382C20.1011 19.0941 25.4456 13.7651 32.0087 13.7651C38.5718 13.7651 43.9163 19.0941 43.9163 25.6382C43.8989 32.1823 38.5544 37.4939 31.9913 37.4939Z",
+	        fillColor: '#399fda',
+	        strokeColor: '#000000',
+	        fillOpacity: 1,
+	        //anchor: new google.maps.Point(200,350),
+	        anchor: new google.maps.Point(32,64),
+	        strokeWeight: 0,
+	        //scale: 0.2
+	    };
+      if(map_data.placemarks.length) {
+        for(var i = 0; i < map_data.placemarks.length; i++) {
+          var iconCoordOfficeOne = {lat: map_data.placemarks[i].coord[0],  lng: map_data.placemarks[i].coord[1]}, 
+          OfficeOne = new google.maps.Marker({
+            position: iconCoordOfficeOne,
+            map: mapOfficeOne,
+            icon: iconOfficeOne,
+            title: map_data.placemarks[i].title,
+              //animation: google.maps.Animation.DROP
+          });
+        }
+      }
+      
+      $(document.body).on('click.azbn7', '.azbn__office__map__set-center-btn', null, function(event){
+        event.preventDefault();
+        var btn = $(this);
+        var coord = btn.attr('data-coord');
+        var coord_arr = coord.split(',');
+        console.dir(coord_arr);
+        mapOfficeOne.setCenter({
+          lat : parseFloat((coord_arr[0] || '').trim()),
+          lng : parseFloat((coord_arr[1] || '').trim()),
+        });
+        
+      });
+      
+    
+  }
+  
+}; 
+$(function () {
+  $(document.body).on('shown.bs.modal', '.modal', {}, function(event){
+    event.preventDefault();
+    $(window).trigger('resize');    
+  });  
 });
